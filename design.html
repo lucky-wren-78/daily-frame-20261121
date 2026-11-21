@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Daily Frame — Saturday 21 November 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; }
+  body {
+    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+    background: #fbf7ec; color: #1a1712;
+    padding: 9px 26px 8px 26px;
+    display: flex; flex-direction: column;
+  }
+  body > * { flex-shrink: 0; }
+
+  /* top strip */
+  .dateline { display: flex; justify-content: space-between; font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px; color: #4f4636; border-bottom: 1px solid #1a1712; padding-bottom: 4px; }
+  .dateline .mid { letter-spacing: 2.2px; color: #a01e28; }
+
+  /* nameplate */
+  .nameplate { text-align: center; padding-top: 4px; }
+  .nameplate h1 { font-family: Georgia, "Liberation Serif", "Times New Roman", serif; font-size: 40px; line-height: 1; letter-spacing: 2px; }
+  .nameplate .motto { margin-top: 3px; font-size: 10px; letter-spacing: 3.5px; font-weight: 700; color: #4f4636; }
+  .nameplate .motto span { color: #a01e28; }
+  .nameplate .edition { margin-top: 2px; font-size: 9.5px; font-weight: 700; letter-spacing: 1.6px; color: #a01e28; }
+  .thickthin { border-top: 3.5px solid #1a1712; border-bottom: 1px solid #1a1712; height: 5px; margin: 6px 0 0 0; }
+
+  /* wire ticker */
+  .wire { font-size: 10px; letter-spacing: .2px; color: #2a251c; padding: 3px 0 4px 0; border-bottom: 1px solid #1a1712; white-space: nowrap; overflow: hidden; }
+  .wire b { color: #a01e28; letter-spacing: 2.5px; }
+  .wire i { color: #a01e28; font-style: normal; font-weight: 700; padding: 0 6px; }
+
+  /* lead story */
+  .leadzone { padding-top: 5px; }
+  .kickerrow { display: flex; justify-content: space-between; align-items: baseline; }
+  .kickerrow .kick { background: #a01e28; color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; padding: 3px 8px 2px 8px; }
+  .kickerrow .side { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #4f4636; }
+  .leadzone h2 { font-family: Georgia, "Liberation Serif", "Times New Roman", serif; font-size: 25px; line-height: 1.08; font-weight: 700; margin-top: 4px; }
+  .leadbody { display: flex; gap: 16px; margin-top: 4px; }
+  .leadbody .copy { flex: 1 1 62%; }
+  .leadbody .copy p { font-size: 11px; line-height: 1.3; color: #2a251c; margin-bottom: 4px; }
+  .leadbody .copy p b { color: #1a1712; }
+  .leadbody .scene { flex: 1 1 38%; background: #ece4cd; border-top: 2.5px solid #1a1712; padding: 5px 7px 4px 7px; }
+  .scene .cap { font-size: 9px; letter-spacing: 1px; font-weight: 700; color: #4f4636; margin-top: 3px; line-height: 1.3; }
+
+  /* six cards, two columns */
+  .storygrid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; margin-top: 5px; }
+  .story { border-top: 2.5px solid #1a1712; padding-top: 4px; display: flex; gap: 8px; }
+  .story .badge { flex: 0 0 25px; height: 25px; background: #1a1712; color: #fff; font-size: 12.5px; font-weight: 700; text-align: center; line-height: 25px; margin-top: 1px; }
+  .story .inner { flex: 1; }
+  .story .desk { font-size: 9.5px; font-weight: 700; letter-spacing: 1.6px; color: #a01e28; }
+  .story h3 { font-family: Georgia, "Liberation Serif", "Times New Roman", serif; font-size: 13px; line-height: 1.12; font-weight: 700; margin-top: 1px; }
+  .story p { font-size: 10px; line-height: 1.24; margin-top: 2px; color: #2a251c; }
+  .story p b { color: #1a1712; }
+
+  /* map, full width */
+  .mapzone { margin-top: 6px; border-top: 2.5px solid #1a1712; padding-top: 4px; }
+  .mapzone .maptitle { display: flex; justify-content: space-between; align-items: baseline; }
+  .mapzone .maptitle h4 { font-size: 11.5px; font-weight: 700; letter-spacing: 2px; }
+  .mapzone .maptitle span { font-size: 9.5px; font-weight: 700; letter-spacing: 1px; color: #4f4636; }
+  .maplegend { display: flex; flex-wrap: wrap; gap: 2px 12px; margin-top: 2px; font-size: 8.8px; line-height: 1.35; color: #2a251c; }
+  .maplegend b { color: #a01e28; letter-spacing: .5px; }
+
+  /* day in numbers */
+  .statstriphead { margin-top: 5px; font-size: 11.5px; font-weight: 700; letter-spacing: 2px; }
+  .statstrip { margin-top: 3px; border-top: 2.5px solid #1a1712; border-bottom: 1.5px solid #1a1712; padding: 4px 0; display: flex; }
+  .stat { flex: 1; text-align: center; border-right: 1px solid #c9bda0; padding: 0 4px; }
+  .stat:last-child { border-right: none; }
+  .stat .big { font-family: Georgia, "Liberation Serif", "Times New Roman", serif; font-size: 15px; font-weight: 700; color: #a01e28; line-height: 1.1; }
+  .stat .small { font-size: 8px; font-weight: 700; letter-spacing: .4px; color: #2a251c; line-height: 1.25; margin-top: 1px; }
+
+  /* briefs, two columns */
+  .briefzone { margin-top: 4px; }
+  .briefzone h4 { font-size: 11.5px; font-weight: 700; letter-spacing: 2px; border-top: 2.5px solid #1a1712; padding-top: 3px; }
+  .briefgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; margin-top: 2px; }
+  .brief { font-size: 9px; line-height: 1.18; color: #2a251c; margin-bottom: 1px; }
+  .brief .no { display: inline-block; background: #a01e28; color: #fff; font-size: 9px; font-weight: 700; padding: 1.5px 5px 1px 5px; margin-right: 4px; }
+  .brief b { color: #1a1712; }
+
+  /* colophon */
+  .colophon { margin-top: auto; border-top: 1.5px solid #1a1712; padding-top: 4px; display: flex; justify-content: space-between; font-size: 9px; letter-spacing: .8px; color: #4f4636; font-weight: 700; }
+</style>
+</head>
+<body>
+
+  <div class="dateline">
+    <span>SATURDAY 21 NOVEMBER 2026</span>
+    <span class="mid">THE WORLD IN ONE DAY</span>
+    <span>20 STORIES &middot; 6 CONTINENTS</span>
+  </div>
+
+  <div class="nameplate">
+    <h1>The Daily Frame</h1>
+    <div class="motto">ONE DAY <span>&middot;</span> ONE PAGE <span>&middot;</span> EVERY STORY CHECKED TWICE</div>
+    <div class="edition">MORNING EDITION &mdash; AS OF 10:00 WIB / 03:00 UTC</div>
+  </div>
+  <div class="thickthin"></div>
+
+  <div class="wire"><b>WIRE</b><i>&diams;</i>MISSILES LAND IN POLAND<i>&diams;</i>KYIV BRIDGES HIT<i>&diams;</i>GAZA STRIKES KILL SIX<i>&diams;</i>S&amp;P ENTERS CORRECTION<i>&diams;</i>UK&ndash;EU RESET SEALED</div>
+
+  <div class="leadzone">
+    <div class="kickerrow">
+      <span class="kick">1 &middot; NOWY LIPOWIEC, POLAND &mdash; FRIDAY</span>
+      <span class="side">LEAD STORY &middot; NATO AIRSPACE BREACHED</span>
+    </div>
+    <h2>Russian missiles land in Poland</h2>
+    <div class="leadbody">
+      <div class="copy">
+        <p><b>Two Russian missiles and a suspected drone came down in Poland</b> on Friday, during a huge Russian attack on Ukraine. Warsaw called it a deliberate provocation; NATO&rsquo;s secretary-general called it a grave violation of allied airspace.</p>
+        <p>A Kh-101 cruise missile crashed beside a forest at Nowy Lipowiec, about 50 km from the Ukrainian border. Two more objects fell near Rudnik nad Sanem and Mo&#322;odycz. No one in Poland was hurt.</p>
+        <p>Polish F-16s and Swedish Gripens patrolled with Patriot batteries on alert &mdash; but no one fired, as crews had about three minutes to judge tracks they could not fully identify. Poland will ask NATO for reinforcements.</p>
+      </div>
+      <div class="scene">
+        <svg width="100%" height="86" viewBox="0 0 360 116">
+          <rect x="0" y="0" width="360" height="116" fill="#2b2b33"/>
+          <g fill="#fbf7ec"><circle cx="30" cy="18" r="1.6"/><circle cx="70" cy="30" r="1.2"/><circle cx="120" cy="14" r="1.5"/><circle cx="250" cy="20" r="1.6"/><circle cx="300" cy="12" r="1.2"/><circle cx="330" cy="34" r="1.5"/><circle cx="205" cy="12" r="1.2"/></g>
+          <!-- schematic Poland, enlarged -->
+          <polygon points="48,30 110,16 190,12 280,18 322,34 330,58 300,84 240,98 160,100 90,90 52,64 40,44" fill="#3a3a44" stroke="#8a8a96" stroke-width="1.5"/>
+          <text x="185" y="42" font-size="14" font-weight="700" letter-spacing="4" text-anchor="middle" fill="#c9c9d4">POLAND</text>
+          <text x="185" y="56" font-size="8" letter-spacing="1.5" text-anchor="middle" fill="#8a8a96">NATO&rsquo;S EASTERN FLANK</text>
+          <!-- impact markers, clear of the labels -->
+          <g>
+            <circle cx="266" cy="76" r="9" fill="#a01e28"/><circle cx="266" cy="76" r="9" fill="none" stroke="#f5c86e" stroke-width="1.5"/>
+            <text x="266" y="79.5" font-size="9" font-weight="700" text-anchor="middle" fill="#fff">1</text>
+            <circle cx="212" cy="84" r="7.5" fill="#a01e28"/>
+            <text x="212" y="87" font-size="8.5" font-weight="700" text-anchor="middle" fill="#fff">2</text>
+            <circle cx="140" cy="78" r="7.5" fill="#a01e28"/>
+            <text x="140" y="81" font-size="8.5" font-weight="700" text-anchor="middle" fill="#fff">3</text>
+          </g>
+          <!-- jet silhouettes -->
+          <g fill="#f5c86e">
+            <polygon points="18,20 36,24 18,28 24,24"/>
+            <polygon points="322,88 340,92 322,96 328,92"/>
+          </g>
+          <text x="180" y="112" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle" fill="#fbf7ec">THREE OBJECTS &middot; THREE SITES &middot; NO ONE HURT</text>
+        </svg>
+        <div class="cap">1 NOWY LIPOWIEC &middot; 2 RUDNIK NAD SANEM &middot; 3 MO&#322;ODYCZ: A KH-101 CRUISE MISSILE AND TWO MORE OBJECTS FELL IN SOUTH-EASTERN POLAND.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="storygrid">
+    <div class="story">
+      <div class="badge">2</div>
+      <div class="inner">
+        <div class="desk">KYIV &middot; UKRAINE</div>
+        <h3>Mass strike hits Kyiv bridges and power</h3>
+        <p>Russia fired <b>more than 400 drones and 110 missiles</b> at Ukraine overnight, hours after Putin vowed retaliation for the Crimea Bridge attack. At least nine people were killed; three bridges over the Dnipro were hit and emergency power cuts spread across 11 regions.</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="badge">3</div>
+      <div class="inner">
+        <div class="desk">GAZA CITY &middot; GAZA</div>
+        <h3>Israeli strikes kill six despite ceasefire</h3>
+        <p>Israeli strikes killed <b>six people in Gaza on Friday</b>, civil defence said, a day after Israel completed a rare tank incursion in the centre of the strip. More than <b>1,600 Palestinians</b> have been killed since the October 2025 ceasefire took effect.</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="badge">4</div>
+      <div class="inner">
+        <div class="desk">WASHINGTON &middot; UNITED STATES</div>
+        <h3>Trump&rsquo;s 90-minute press conference</h3>
+        <p>Fresh from his Asia trip, President Trump held a freewheeling 90-minute briefing, promising to <b>penalise US firms that build data centres abroad</b> and to veto Democratic bills when they take Congress in 2027 &mdash; while offering to deal on health care.</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="badge">5</div>
+      <div class="inner">
+        <div class="desk">NEW YORK &middot; MARKETS</div>
+        <h3>S&amp;P and Dow slide into correction</h3>
+        <p>Wall Street plunged on Friday as the AI sell-off gathered pace: the <b>S&amp;P 500 fell 3.7%</b> and the Nasdaq 5.3%, both now in correction. <b>Nvidia sank 14%</b> in a day; Anthropic fell 9% after its record IPO debut.</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="badge">6</div>
+      <div class="inner">
+        <div class="desk">BRUSSELS &middot; EUROPE</div>
+        <h3>UK and EU seal post-Brexit reset deal</h3>
+        <p>Britain and the EU agreed a reset deal at their Brussels summit: most <b>food checks dropped</b>, a youth mobility scheme for <b>100,000 people a year</b>, and linked carbon markets. University fee cuts were put off for six months.</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="badge">7</div>
+      <div class="inner">
+        <div class="desk">SHENZHEN &middot; CHINA</div>
+        <h3>Trump, Xi and Putin&rsquo;s first trilateral</h3>
+        <p>The first-ever meeting of the three leaders ended with a <b>four-point declaration toward peace</b> &mdash; but few concrete results on Ukraine or Iran. Trump said Putin told him he wants the war to end by diplomacy.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mapzone">
+    <div class="maptitle">
+      <h4>THE DAY ON THE MAP</h4>
+      <span>NUMBERS MATCH THE STORIES BELOW &middot; SCHEMATIC, NOT TO SCALE</span>
+    </div>
+    <svg width="972" height="148" viewBox="0 0 972 148" style="display:block;margin-top:2px">
+      <rect x="0" y="0" width="972" height="148" fill="#efe8d2"/>
+      <!-- continents, rough equirectangular outlines (lon/lat mapped to the box) -->
+      <g fill="#d8cdae" stroke="#b3a67f" stroke-width="1">
+        <polygon points="32,20 108,16 149,16 230,17 270,23 284,25 311,25 338,31 324,35 297,39 284,45 267,53 243,57 224,61 203,58 176,50 149,41 149,34 108,25 68,26 41,25"/>
+        <polygon points="329,21 365,25 378,21 405,18 419,16 378,12 338,12 324,16"/>
+        <polygon points="270,66 297,64 319,66 338,69 351,74 378,78 392,81 378,86 357,92 338,99 324,105 311,111 297,117 289,115 289,107 292,99 297,89 284,86 270,78 267,74 270,70"/>
+        <polygon points="440,62 459,49 486,44 513,44 540,48 567,49 581,51 602,64 624,65 616,74 594,82 581,90 572,97 554,102 535,103 527,96 518,89 510,75 510,71 464,71 451,67 440,64"/>
+        <polygon points="459,44 462,39 481,35 486,33 500,30 508,27 513,25 535,28 543,29 551,25 567,25 567,16 554,16 535,17 518,21 500,25 500,26 508,29 518,30 535,30 551,30 562,37 548,41 537,39 527,38 518,38 508,38 494,39 486,41 481,44 470,44"/>
+        <polygon points="567,16 594,18 648,17 675,15 756,11 837,15 918,16 967,20 945,25 918,29 869,33 864,41 837,45 829,43 810,49 783,58 770,66 756,67 743,62 729,56 716,58 702,67 694,67 683,61 675,58 664,53 648,53 635,53 621,50 616,49 605,50 594,49 581,51 567,44"/>
+        <polygon points="791,92 794,99 797,103 810,102 837,100 856,103 864,105 883,106 891,104 899,96 880,90 869,83 853,84 843,84 826,85 815,88 805,90"/>
+        <polygon points="473,33 486,30 491,29 478,26 470,29"/>
+        <polygon points="837,49 851,46 864,43 869,40 864,37 851,38 837,43"/>
+        <polygon points="937,111 951,108 959,105 967,104 956,108 940,112"/>
+        <polygon points="743,78 770,79 797,81 824,81 851,77 864,81 837,76"/>
+        <polygon points="605,87 616,90 613,95 605,90"/>
+      </g>
+      <!-- graticule -->
+      <g stroke="#c9bda0" stroke-width="0.7">
+        <line x1="0" y1="49" x2="972" y2="49"/><line x1="0" y1="99" x2="972" y2="99"/>
+        <line x1="243" y1="0" x2="243" y2="148"/><line x1="486" y1="0" x2="486" y2="148"/><line x1="729" y1="0" x2="729" y2="148"/>
+      </g>
+      <!-- markers -->
+      <g font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">
+        <g><circle cx="548" cy="33" r="7.5" fill="#a01e28"/><text x="548" y="36" fill="#fff">1</text></g>
+        <g><circle cx="568" cy="33" r="7.5" fill="#a01e28"/><text x="568" y="36" fill="#fff">2</text></g>
+        <g><circle cx="579" cy="48" r="7.5" fill="#a01e28"/><text x="579" y="51" fill="#fff">3</text></g>
+        <g><circle cx="272" cy="46" r="7.5" fill="#a01e28"/><text x="272" y="49" fill="#fff">4</text></g>
+        <g><circle cx="290" cy="38" r="7.5" fill="#a01e28"/><text x="290" y="41" fill="#fff">5</text></g>
+        <g><circle cx="498" cy="32" r="7.5" fill="#a01e28"/><text x="498" y="35" fill="#fff">6</text></g>
+        <g><circle cx="794" cy="55" r="7.5" fill="#a01e28"/><text x="794" y="58" fill="#fff">7</text></g>
+        <g><circle cx="863" cy="45" r="7.5" fill="#a01e28"/><text x="863" y="48" fill="#fff">8</text></g>
+        <g><circle cx="625" cy="45" r="7.5" fill="#a01e28"/><text x="625" y="48" fill="#fff">9</text></g>
+        <g><circle cx="167" cy="46" r="7.5" fill="#a01e28"/><text x="167" y="49" fill="#fff">10</text></g>
+        <g><circle cx="562" cy="95" r="7.5" fill="#a01e28"/><text x="562" y="98" fill="#fff">11</text></g>
+        <g><circle cx="958" cy="108" r="7.5" fill="#a01e28"/><text x="958" y="111" fill="#fff">12</text></g>
+        <g><circle cx="286" cy="70" r="7.5" fill="#a01e28"/><text x="286" y="73" fill="#fff">13</text></g>
+        <g><circle cx="360" cy="93" r="7.5" fill="#a01e28"/><text x="360" y="96" fill="#fff">14</text></g>
+        <g><circle cx="328" cy="102" r="7.5" fill="#a01e28"/><text x="328" y="105" fill="#fff">15</text></g>
+        <g><circle cx="54" cy="91" r="7.5" fill="#a01e28"/><text x="54" y="94" fill="#fff">16</text></g>
+        <g><circle cx="595" cy="58" r="7.5" fill="#a01e28" opacity="0.85"/><text x="595" y="61" fill="#fff">17</text></g>
+        <g><circle cx="721" cy="51" r="7.5" fill="#a01e28"/><text x="721" y="54" fill="#fff">18</text></g>
+        <g><circle cx="822" cy="41" r="7.5" fill="#a01e28"/><text x="822" y="44" fill="#fff">19</text></g>
+        <g><circle cx="694" cy="50" r="7.5" fill="#a01e28"/><text x="694" y="53" fill="#fff">20</text></g>
+      </g>
+    </svg>
+    <div class="maplegend">
+      <span><b>1</b> Nowy Lipowiec</span><span><b>2</b> Kyiv</span><span><b>3</b> Gaza</span><span><b>4</b> Washington</span><span><b>5</b> New York</span><span><b>6</b> Brussels</span><span><b>7</b> Shenzhen</span><span><b>8</b> Tokyo</span><span><b>9</b> Tehran</span><span><b>10</b> Los Angeles</span><span><b>11</b> Pretoria</span><span><b>12</b> Wellington</span><span><b>13</b> Bogot&aacute;</span><span><b>14</b> S&atilde;o Paulo</span><span><b>15</b> Buenos Aires</span><span><b>16</b> Cook Is.</span><span><b>17</b> Gaza storm</span><span><b>18</b> Everest</span><span><b>19</b> Dandong</span><span><b>20</b> New Delhi</span>
+    </div>
+  </div>
+
+  <div class="statstriphead">THE DAY IN NUMBERS</div>
+  <div class="statstrip">
+    <div class="stat"><div class="big">3</div><div class="small">RUSSIAN OBJECTS THAT<br>CROSSED INTO POLAND</div></div>
+    <div class="stat"><div class="big">400+</div><div class="small">DRONES FIRED AT UKRAINE<br>IN ONE NIGHT</div></div>
+    <div class="stat"><div class="big">&minus;3.7%</div><div class="small">S&amp;P 500 ON FRIDAY,<br>NOW IN CORRECTION</div></div>
+    <div class="stat"><div class="big">71&ndash;0</div><div class="small">ARGENTINA&rsquo;S SENATE VOTE<br>FOR A DISABILITY LAW</div></div>
+    <div class="stat"><div class="big">1,600+</div><div class="small">KILLED IN GAZA SINCE<br>THE CEASEFIRE BEGAN</div></div>
+  </div>
+
+  <div class="briefzone">
+    <h4>IN BRIEF &mdash; FRIDAY AND OVERNIGHT</h4>
+    <div class="briefgrid">
+      <div class="brief"><span class="no">8</span><b>Peace talks edge closer.</b> US envoys see progress on a Ukraine peace framework, with Washington open to NATO-style guarantees; envoy Jared Kushner said Moscow may accept them. Russia ruled out Ukraine joining NATO.</div>
+      <div class="brief"><span class="no">9</span><b>Japan to fire missiles in India.</b> Japanese forces will train on Indian firing ranges for the first time, under a deal signed at India&ndash;Japan 2+2 talks in Tokyo on Thursday &mdash; including surface-to-ship missile drills.</div>
+      <div class="brief"><span class="no">10</span><b>US sanctions four Iranians.</b> The Treasury added four people to its sanctions list over handling Iranian oil money. Trump said he is in no rush on Iran and may not decide on further action until 2027.</div>
+      <div class="brief"><span class="no">11</span><b>Palisades Fire arson verdict.</b> A Los Angeles jury convicted Jonathan Rinderknecht, 30, of starting the January 2025 fire that killed 12 people and destroyed about 6,800 structures &mdash; on retrial, after the first jury deadlocked.</div>
+      <div class="brief"><span class="no">12</span><b>Pretoria protest targets Nigerians.</b> An anti-migrant group marched in Pretoria on Wednesday demanding a ban on Nigerians entering South Africa; a Nigerian lawyer in Johannesburg said the group has no authority to demand one.</div>
+      <div class="brief"><span class="no">13</span><b>New Zealand still undecided.</b> Two weeks after the election, no government is formed: Labour narrowly won the party vote, National won more seats, and about 400,000 special votes are counted on 27 November.</div>
+      <div class="brief"><span class="no">14</span><b>US backs coca spraying.</b> Washington backed Colombia&rsquo;s plan to resume aerial spraying of coca crops, despite concerns from US lawmakers &mdash; a shift in the anti-drug strategy.</div>
+      <div class="brief"><span class="no">15</span><b>Brazil&rsquo;s central bank steps in.</b> The bank sold $1 billion of reserves to slow the real&rsquo;s slide against the dollar, amid market worries about government spending after Lula&rsquo;s re-election.</div>
+      <div class="brief"><span class="no">16</span><b>Argentina passes disability law.</b> The Senate voted 71&ndash;0 on Thursday for a permanent disability benefits law, replacing the emergency scheme &mdash; a pension worth 70% of the minimum retirement benefit.</div>
+      <div class="brief"><span class="no">17</span><b>Storm floods Gaza tents.</b> The season&rsquo;s first strong storm flooded about 70,000 tents in Gaza within 12 hours, killing at least five people; heavy rain has directly affected at least 106,000 people, UNICEF said.</div>
+      <div class="brief"><span class="no">18</span><b>Helicopters collide at Everest.</b> An Indian tourist died after two helicopters collided near the Mount Everest base camp, officials confirmed to the BBC.</div>
+      <div class="brief"><span class="no">19</span><b>Kim crosses new bridge to China.</b> North Korea&rsquo;s Kim Jong Un arrived in the Chinese border city of Dandong on Saturday, crossing via the newly opened New Yalu River Bridge, Yonhap reported.</div>
+      <div class="brief"><span class="no">20</span><b>Gaza ground raid ends.</b> Israel said it completed a rare ground operation west of the ceasefire line in central Gaza, targeting a tunnel; about 6,000 Palestinians fled the area during the operation.</div>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <span>THE DAILY FRAME &middot; SATURDAY 21 NOVEMBER 2026</span>
+    <span>MORNING EDITION &middot; SOURCES IN SOURCES.MD</span>
+    <span>20 STORIES &middot; 6 CONTINENTS</span>
+  </div>
+
+</body>
+</html>
