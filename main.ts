@@ -1,9 +1,11 @@
 // The Daily Frame — entry program for the make.fun news-image-20261121 bounty.
 //
-// Morning edition for Saturday 21 November 2026: twenty stories from
+// Full-day edition for Saturday 21 November 2026: thirty stories from
 // six continents, laid out as one newspaper front page. The page is
 // typeset in design.html; render.mjs (a build-time helper the grader
 // never runs) turns it into the entry.png committed beside this file.
+// This edition replaces the morning edition of the same day: it covers
+// the whole of Saturday in every time zone, and says so on its face.
 //
 // The program itself is deliberately plain. It reads the committed
 // picture, checks it against the competition's image gate (one PNG or

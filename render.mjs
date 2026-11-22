@@ -1,4 +1,5 @@
-// Build-time renderer for The Daily Frame, 21 November 2026.
+// Build-time renderer for The Daily Frame, 21 November 2026
+// (full-day edition, thirty stories).
 //
 // Takes design.html and screenshots it at exactly 1024x1024 with
 // headless Chromium (Playwright, from the workspace tools install).
